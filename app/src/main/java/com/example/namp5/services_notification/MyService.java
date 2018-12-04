@@ -20,6 +20,7 @@ public class MyService extends Service implements MusicInterface, MediaPlayer.On
     public static final int VALUE_PREVIOUS_SONG = 1113;
     public static final int VALUE_PLAY_SONG = 1114;
     public static final int CHANGE_POSITION = 1;
+
     private final IBinder mBinder = new LocalBinder();
     private MediaPlayer mMediaPlayer;
     private PendingIntent mNextPendingIntent;
@@ -141,6 +142,7 @@ public class MyService extends Service implements MusicInterface, MediaPlayer.On
         }
         mBuilder.setContent(mNotificationLayout);
         startForeground(CHANGE_POSITION, mBuilder.build());
+
     }
 
     public int getCurrentIndex() {
@@ -200,6 +202,7 @@ public class MyService extends Service implements MusicInterface, MediaPlayer.On
             mCurrentIndex = 0;
         } else if (mCurrentIndex < 0) {
             mCurrentIndex = MainActivity.SONG_NAMES.length - CHANGE_POSITION;
+
         }
         this.create(mCurrentIndex);
         this.start();

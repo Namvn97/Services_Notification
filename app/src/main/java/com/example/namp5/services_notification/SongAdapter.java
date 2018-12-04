@@ -10,7 +10,8 @@ import android.widget.TextView;
  * Created by namp5 on 12/3/2018.
  */
 
-public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ViewHolder>   {
+
+public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ViewHolder>  {
     private OnClickItemSongListener mListener;
 
     public SongAdapter(OnClickItemSongListener listener){

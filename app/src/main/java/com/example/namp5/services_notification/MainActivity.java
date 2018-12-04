@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,
         MyService.OnSyncActivityListerner, SongAdapter.OnClickItemSongListener, SeekBar.OnSeekBarChangeListener {
+
     public static final int NEXT_SONG = 1;
     public static final int PREVIOUS_SONG = -1;
     public static final int MESSAGE_DELAY = 1000;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTextTimeFinsh;
     private SeekBar mSeekBar;
     private Handler mHandler;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void playSong() {
+    private void playSong(){
         if (mService.isPlaying()) {
             mService.pause();
             mImageView_Play.setImageResource(R.drawable.ic_play_arrow_black_24dp);
