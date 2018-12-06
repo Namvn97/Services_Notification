@@ -4,7 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.namp5.services_notification.MainActivity">
+    tools:context="com.example.namp5.services_notification.MainActivity"
+    android:background="@color/color_gray">
+
+    <ImageView
+        android:id="@+id/image_previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_fast_rewind_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/image_play"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9"/>
+    <ImageView
+        android:id="@+id/image_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_play_arrow_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/image_previous"
+        app:layout_constraintEnd_toStartOf="@id/image_next"
+        app:layout_constraintStart_toEndOf="@id/image_previous"
+        app:layout_constraintTop_toTopOf="@id/image_previous" />
+    <ImageView
+        android:id="@+id/image_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_fast_forward_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/image_previous"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image_play"
+        app:layout_constraintTop_toTopOf="@id/image_previous" />
+
+    <SeekBar
+        android:id="@+id/seek_bar_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/image_play"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <TextView
+        android:id="@+id/text_start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_30"
+        app:layout_constraintBottom_toTopOf="@+id/seek_bar_music"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/text_time_song"
+        android:textColor="@color/color_primary"
+        android:textSize="@dimen/sp_20"/>
+
+    <TextView
+        android:id="@+id/text_finsh_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_30"
+        app:layout_constraintBottom_toTopOf="@+id/seek_bar_music"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/text_time_song"
+        android:textColor="@color/color_primary"
+        android:textSize="@dimen/sp_20"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_songs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/text_start_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
 
